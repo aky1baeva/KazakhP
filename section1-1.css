@@ -1,0 +1,102 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .task {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .task p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .options button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .options button:hover {
+            background-color: #0056b3;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 14px;
+            color: green;
+        }
+
+        .feedback.wrong {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .list {
+            width: 45%;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .list h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .dropzone {
+            min-height: 40px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .correct {
+            border-color: green;
+            color: green;
+        }
+
+        .wrong {
+            border-color: red;
+            color: red;
