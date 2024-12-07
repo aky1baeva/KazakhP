@@ -1,118 +1,32 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Қазақ тілін үйрену платформасы</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    padding: 2rem;
-}
-
-.modules {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-}
-
-.module {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 30%;
-    text-align: center;
-}
-
-.module h2 {
-    color: #4CAF50;
-}
-
-.progress {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-    </style>
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Қазақ тілін үйрену платформасы</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Басты бет</a></li>
-                <li><a href="#">Сөздік</a></li>
-                <li><a href="#">Грамматика</a></li>
-                <li><a href="#">Әңгімелесу тәжірибесі</a></li>
-                <li><a href="#">Прогресс</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="modules">
-            <div class="module">
-                <h2>Сөздік</h2>
-                <p>Жаңа сөздерді үйреніңіз және есте сақтаңыз.</p>
-            </div>
-            <div class="module">
-                <h2>Грамматика</h2>
-                <p>Қазақ тілінің грамматикасын меңгеріңіз.</p>
-            </div>
-            <div class="module">
-                <h2>Әңгімелесу тәжірибесі</h2>
-                <p>Әңгімелесу арқылы тілдік дағдыларыңызды жетілдіріңіз.</p>
-            </div>
-        </section>
-        <section class="progress">
-            <h2>Сіздің прогрессіңіз</h2>
-            <p>Осы аптадағы жетістіктеріңізді қараңыз.</p>
-            <!-- Мұнда прогресс графиктері мен диаграммаларын қосуға болады -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Қазақ тілін үйрену платформасы</p>
-    </footer>
-    <script src="script.js"></script>
+    <!-- Секция с видео на фоне -->
+    <div class="video-banner">
+        <video autoplay muted loop>
+            <source src="D:\xampp\htdocs\KazakhP\5192068-uhd_2160_4096_25fps.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>        
+    </div>
+
+    <!-- Кнопки входа и регистрации справа -->
+    <div class="auth-buttons">
+        <a href="login.php" class="auth-button">Кіру</a>
+        <a href="register.php" class="auth-button">Тіркелу</a>
+    </div>
+
+    <!-- Центральный контент -->
+    <div class="content">
+        <h1>Қазақ тілін үйрену платформасына қош келдіңіз!</h1>
+        <p>Тіл үйрену сапарыңызды бастау үшін қазір тіркеліңіз.</p>
+        <button class="join-button" onclick="window.location.href='register.php'">Қосылу</button>
+    </div>
+    
 </body>
 </html>
-
