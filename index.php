@@ -10,7 +10,7 @@
     <!-- Секция с видео на фоне -->
     <div class="video-banner">
     <video autoplay muted loop>
-        <source src="5192068-uhd_2160_4096_25fps.mp4" type="video/mp4">
+        <source src="141519-777930387_small.mp4" type="video/mp4">
     Ваш браузер не поддерживает видео.
 </video>
        
