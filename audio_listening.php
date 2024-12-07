@@ -1,6 +1,6 @@
 <?php
 // Дерекқорға қосылу
-$connection = new mysqli("localhost", "root", "", "kazakh_language");
+$connection = new mysqli("localhost", "root", "", "kazakh_language",3307);
 
 // Қосылу қателігін тексеру
 if ($connection->connect_error) {
