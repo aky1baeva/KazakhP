@@ -152,7 +152,7 @@
         <a href="#"><i class="fas fa-level-up-alt"></i> 2-Деңгей</a>
         <a href="#"><i class="fas fa-level-up-alt"></i> 3-Деңгей</a>
         <a onclick="window.location.href='dictionary.php'"><i class="fas fa-book"></i> Сөздіктер</a> 
-        <a onclick="window.location.href='test.php'"><i class="fas fa-question-circle"></i> Деңгей анықтау тесті</a>
+        <a onclick="window.location.href='index_question.php'"><i class="fas fa-question-circle"></i> Деңгей анықтау тесті</a>
         <a onclick="window.location.href='book_list.php'"><i class="fas fa-book-reader"></i> Кітаптар</a>
         <a onclick="window.location.href='audio_books.php'"><i class="fas fa-headphones-alt"></i> Аудио кітаптар</a>
         <a href="#"><i class="fas fa-film"></i> Қазақша кинолар</a>
@@ -195,7 +195,7 @@
                 <div class="card-body">
                     <i class="icon fas fa-tasks"></i>
                     <h5 class="card-title">Деңгей анықтау тесті</h5>
-                    <button class="btn" onclick="window.location.href='test.php'">Ашу</button>
+                    <button class="btn" onclick="window.location.href='index_question.php'">Ашу</button>
                 </div>
             </div>
             <div class="card yellow">
