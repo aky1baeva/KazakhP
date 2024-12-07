@@ -1,6 +1,6 @@
 <?php
 // Подключение к базе данных
-$conn = new mysqli("localhost", "root", "", "kazakh_language");
+$conn = new mysqli("localhost", "root", "", "kazakh_language",3307);
 
 if ($conn->connect_error) {
     die("Ошибка подключения: " . $conn->connect_error);
