@@ -167,21 +167,21 @@
                 <div class="card-body">
                     <i class="icon fas fa-level-up-alt"></i>
                     <h5 class="card-title">1-деңгей</h5>
-                    <button class="btn">Ашу</button>
+                    <button class="btn" onclick="window.location.href='level1.php'">Ашу</button>
                 </div>
             </div>
             <div class="card green">
                 <div class="card-body">
                     <i class="icon fas fa-level-up-alt"></i>
                     <h5 class="card-title">2-деңгей</h5>
-                    <button class="btn">Ашу</button>
+                    <button class="btn" onclick="window.location.href='level2.php'">Ашу</button>
                 </div>
             </div>
             <div class="card red">
                 <div class="card-body">
                     <i class="icon fas fa-level-up-alt"></i>
                     <h5 class="card-title">3-деңгей</h5>
-                    <button class="btn">Ашу</button>
+                    <button class="btn" onclick="window.location.href='level3.php'">Ашу</button>
                 </div>
             </div>
             <div class="card orange">
