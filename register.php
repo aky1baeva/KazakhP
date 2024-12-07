@@ -53,7 +53,7 @@ $conn->close();
                 
                 <button type="submit">Тіркелу</button>
             </form>
-            <p>Аккаунтыңыз бар ма? <a href="login.html">Кіру</a></p>
+            <p>Аккаунтыңыз бар ма? <a href="login.php">Кіру</a></p>
         </div>
     </div>
 </body>

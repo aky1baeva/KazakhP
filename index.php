@@ -9,10 +9,11 @@
 <body>
     <!-- Секция с видео на фоне -->
     <div class="video-banner">
-        <video autoplay muted loop>
-            <source src="D:\xampp\htdocs\KazakhP\5192068-uhd_2160_4096_25fps.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>        
+    <video autoplay muted loop>
+        <source src="5192068-uhd_2160_4096_25fps.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+       
     </div>
 
     <!-- Кнопки входа и регистрации справа -->
