@@ -14,34 +14,25 @@ if ($conn->connect_error) {
 
 // Обработка данных из формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'] ?? '';
-    $director = $_POST['director'] ?? ''; // New field for movies
-    $author = $_POST['author'] ?? ''; // For audiobooks
+    $title = $_POST['title'] ?? ''; // Обеспечивает защиту от ошибки Undefined
+    $director = $_POST['director'] ?? '';
     $genre = $_POST['genre'] ?? '';
-    $is_movie = isset($_POST['is_movie']) ? 1 : 0; // Flag to distinguish between audiobook and movie
+    
 
     // Проверяем, загружен ли файл
-    if (isset($_FILES['audio_file']) && $_FILES['audio_file']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'audio/';
-        $filePath = $uploadDir . basename($_FILES['audio_file']['name']);
+    if (isset($_FILES['video_file']) && $_FILES['video_file']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = 'videos/';
+        $videoPath = $uploadDir . basename($_FILES['video_file']['name']);
         
         // Перемещение загруженного файла в указанную директорию
-        if (move_uploaded_file($_FILES['audio_file']['tmp_name'], $filePath)) {
-            // Добавление данных в соответствующую таблицу
-            if ($is_movie) {
-                $query = "INSERT INTO movies (title, director, genre, video_path) VALUES (?, ?, ?, ?)";
-            } else {
-                $query = "INSERT INTO audiobooks (title, author, genre, audio_path) VALUES (?, ?, ?, ?)";
-            }
+        if (move_uploaded_file($_FILES['video_file']['tmp_name'], $videoPath)) {
+            // Добавление данных в базу
+            $query = "INSERT INTO movies (title, director, genre, video_path) VALUES (?, ?, ?, ?)";
             $stmt = $conn->prepare($query);
-            if ($is_movie) {
-                $stmt->bind_param("ssss", $title, $director, $genre, $filePath);
-            } else {
-                $stmt->bind_param("ssss", $title, $author, $genre, $filePath);
-            }
+            $stmt->bind_param("ssss", $title, $director, $genre, $videoPath);
 
             if ($stmt->execute()) {
-                echo "Кіно/Аудиокітап сәтті қосылды!";
+                echo "Фильм сәтті қосылды!";
             } else {
                 echo "Қате: " . $conn->error;
             }
@@ -51,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Файлды жүктеу сәтсіз болды.";
         }
     } else {
-        echo "Файлды таңдаңыз.";
+        echo "Видеофайлды таңдаңыз.";
     }
 }
 
@@ -63,7 +54,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кино/Аудиокітап қосу</title>
+    <title>Фильм қосу</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -108,32 +99,19 @@ $conn->close();
 </head>
 <body>
     <div class="form-container">
-        <h1>Кино/Аудиокітап қосу</h1>
+        <h1>Фильм қосу</h1>
         <form action="" method="POST" enctype="multipart/form-data">
             <label for="title">Атауы:</label>
             <input type="text" id="title" name="title" required>
 
-            <label for="author">Автор (Аудиокітап үшін):</label>
-            <input type="text" id="author" name="author">
-
-            <label for="director">Режиссер (Кино үшін):</label>
-            <input type="text" id="director" name="director">
+            <label for="director">Режиссер:</label>
+            <input type="text" id="director" name="director" required>
 
             <label for="genre">Жанр:</label>
-            <select id="genre" name="genre" required>
-                <option value="Роман">Роман</option>
-                <option value="Повесть">Повесть</option>
-                <option value="Поэзия">Поэзия</option>
-                <option value="Фантастика">Фантастика</option>
-                <option value="Басқа">Басқа</option>
-            </select>
+            <input type="text" id="genre" name="genre" required>
 
-            <label for="audio_file">Файл (Аудиокітап үшін):</label>
-            <input type="file" id="audio_file" name="audio_file" accept="audio/*" required>
-
-            <label for="is_movie">
-                <input type="checkbox" id="is_movie" name="is_movie" value="1"> Қосу ретінде кино/фильм
-            </label>
+            <label for="video_file">Видеофайл:</label>
+            <input type="file" id="video_file" name="video_file" accept="video/*" required>
 
             <button type="submit">Қосу</button>
         </form>

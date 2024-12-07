@@ -1,8 +1,8 @@
 <?php
 session_start();
-include 'movie_admin.php'; // Деректер базасына қосылу
+include 'db_movies.php'; // Connect to the database
 
-// Егер іздеу сұрауы болса
+// If there is a search query
 $search_query = '';
 if (isset($_GET['query'])) {
     $search_query = $conn->real_escape_string($_GET['query']);
@@ -21,7 +21,7 @@ $result = $conn->query($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кино фильмдер тізімі</title>
+    <title>Фильмдер тізімі</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,16 +68,15 @@ $result = $conn->query($query);
         a:hover {
             text-decoration: underline;
         }
-        /* Іздеу контейнері стилі */
         .search-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            gap: 10px; /* Ені мен биіктікті аздап кеңейту үшін */
+            gap: 10px;
         }
         .search-container input[type="text"] {
-            width: 70%; /* Аздап кеңейтіңіз */
+            width: 70%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -94,13 +93,15 @@ $result = $conn->query($query);
         .search-container button:hover {
             background-color: #0056b3;
         }
+        .playback-control {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Кино фильмдер тізімі</h1>
+        <h1>Фильмдер тізімі</h1>
         
-        <!-- Іздеу формасы -->
         <form action="" method="GET" class="search-container">
             <input type="text" name="query" placeholder="Іздеу..." value="<?= htmlspecialchars($search_query); ?>" required>
             <button type="submit">Іздеу</button>
@@ -112,7 +113,7 @@ $result = $conn->query($query);
                     <th>Атауы</th>
                     <th>Режиссер</th>
                     <th>Жанр</th>
-                    <th>Таңдау/Жүктеу</th>
+                    <th>Ойнату/Жүктеу</th>
                 </tr>
             </thead>
             <tbody>
@@ -123,11 +124,19 @@ $result = $conn->query($query);
                             <td><?= htmlspecialchars($movie['director']); ?></td>
                             <td><?= htmlspecialchars($movie['genre']); ?></td>
                             <td>
-                                <video controls>
+                                <video controls class="playback-control">
                                     <source src="<?= htmlspecialchars($movie['video_path']); ?>" type="video/mp4">
-                                    Сіздің браузеріңіз бұл бейнені қолдамайды.
+                                    Сіздің браузеріңіз бұл видеоны қолдамайды.
                                 </video>
                                 <a href="<?= htmlspecialchars($movie['video_path']); ?>" download>Жүктеу</a>
+                                <!-- Контроль скорости воспроизведения -->
+                                <label for="playback-speed-<?= $movie['id']; ?>">Скорость:</label>
+                                <select id="playback-speed-<?= $movie['id']; ?>" onchange="setPlaybackSpeed(this)">
+                                    <option value="0.5">0.5x</option>
+                                    <option value="1" selected>1x</option>
+                                    <option value="1.5">1.5x</option>
+                                    <option value="2">2x</option>
+                                </select>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -139,6 +148,13 @@ $result = $conn->query($query);
             </tbody>
         </table>
     </div>
+
+    <script>
+        function setPlaybackSpeed(select) {
+            var video = select.closest('td').querySelector('video');
+            video.playbackRate = parseFloat(select.value);
+        }
+    </script>
 </body>
 </html>
 
