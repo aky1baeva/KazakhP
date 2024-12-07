@@ -156,7 +156,7 @@
         <a onclick="window.location.href='book_list.php'"><i class="fas fa-book-reader"></i> Кітаптар</a>
         <a href="#"><i class="fas fa-headphones-alt"></i> Аудио кітаптар</a>
         <a href="#"><i class="fas fa-film"></i> Қазақша кинолар</a>
-        <a href="#"><i class="fas fa-cogs"></i> Настройка</a>
+        <a onclick="window.location.href='setting.php'"><i class="fas fa-cogs"></i> Настройка</a>
         <a href="#"><i class="fas fa-sign-out-alt"></i> Шығу</a>
     </div>
 
@@ -226,7 +226,7 @@
                 <div class="card-body">
                     <i class="icon fas fa-cogs"></i>
                     <h5 class="card-title">Меню параметрлері</h5>
-                    <button class="btn">Ашу</button>
+                    <button class="btn" onclick="window.location.href='setting.php'">Ашу</button>
                 </div>
             </div>
             
