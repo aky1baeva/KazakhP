@@ -16,12 +16,6 @@
        
     </div>
 
-    <!-- Кнопки входа и регистрации справа -->
-    <div class="auth-buttons">
-        <a href="login.php" class="auth-button">Кіру</a>
-        <a href="register.php" class="auth-button">Тіркелу</a>
-    </div>
-
     <!-- Центральный контент -->
     <div class="content">
         <h1>Қазақ тілін үйрену платформасына қош келдіңіз!</h1>
