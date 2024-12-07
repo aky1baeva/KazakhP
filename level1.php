@@ -12,24 +12,24 @@
     </header>
     <main class="content">
         <ul>
-            <li>I-бөлім. Танысу</li>
-            <li>II-бөлім. Отбасы</li>
-            <li>III-бөлім. Мекенжай</li>
-            <li>IV-бөлім. Жұмыс</li>
-            <li>V-бөлім. Азық-түлік</li>
-            <li>VI-бөлім. Бос уақыт</li>
-            <li>VII-бөлім. Ауа райы</li>
-            <li>VIII-бөлім. Киім</li>
-            <li>IX-бөлім. Сүйікті іс және кәсіп</li>
-            <li>X-бөлім. Денсаулық - зор байлық</li>
-            <li>XI-бөлім. Өнер</li>
-            <li>XII-бөлім. Мерекелер</li>
-            <li>Қосымша</li>
+            <li><a href="section1-1.php">I-бөлім.Танысу</a></li>
+            <li><a href="section1-2.php">II-бөлім. Отбасы</a></li>
+            <li><a href="section1-3.php">III-бөлім. Мекенжай</a></li>
+            <li><a href="section1-4.php">IV-бөлім. Жұмыс</a></li>
+            <li><a href="section1-5.php">V-бөлім. Азық-түлік</a></li>
+            <li><a href="section1-6.php">VI-бөлім. Бос уақыт</a></li>
+            <li><a href="section1-7.php">VII-бөлім. Ауа райы</a></li>
+            <li><a href="section1-8.php">VIII-бөлім. Киім</a></li>
+            <li><a href="section1-9.php">IX-бөлім. Сүйікті іс және кәсіп</a></li>
+            <li><a href="section1-10.php">X-бөлім. Денсаулық - зор байлық</a></li>
+            <li><a href="section1-11.php">XI-бөлім. Өнер</a></li>
+            <li><a href="section1-12.php">XII-бөлім. Мерекелер</a></li>
+            <li><a href="level.php">Қосымша</a></li>
         </ul>
-        <a href="level.html" btn>Басты бетке қайту</a>
+        <a href="d.php" class="btn">Басты бетке қайту</a>
     </main>
     <footer class="footer">
-
+        <!-- Footer content -->
     </footer>
 </body>
 </html>
