@@ -44,7 +44,7 @@ body {
 }
 
 .auth-button {
-    background-color:#0056b3;
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -54,7 +54,7 @@ body {
 }
 
 .auth-button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
 /* Орталық контент */
@@ -81,7 +81,7 @@ p {
 
 /* Батырма "Қосылу" */
 .join-button {
-    background-color: #0056b3;
+    background-color: #4CAF50;
     color: white;
     font-size: 1.1rem;
     padding: 12px 25px;
@@ -92,7 +92,7 @@ p {
 }
 
 .join-button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
 @media screen and (max-width: 768px) {

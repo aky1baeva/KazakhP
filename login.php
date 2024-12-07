@@ -38,7 +38,7 @@ $conn->close();
     <div class="background">
         <div class="form-container">
             <h1>Кіру</h1>
-            <form method="POST" action="login_process.php">
+            <form method="POST" action="p.php">
                 <label for="email">Электрондық поштаңызды енгізіңіз</label>
                 <input type="email" name="email" placeholder="Электрондық поштаңызды енгізіңіз" required>
                 
