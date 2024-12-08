@@ -71,7 +71,7 @@
             </a>
         </div>
         <div class="col-md-4">
-            <a href="dictionary.php" class="card shadow-sm text-center text-decoration-none">
+            <a href="admin_dictionary.php" class="card shadow-sm text-center text-decoration-none">
                 <div class="card-body">
                     <i class="fas fa-book fa-3x text-danger"></i>
                     <h5 class="card-title mt-3">Manage Dictionary</h5>

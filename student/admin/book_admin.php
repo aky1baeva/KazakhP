@@ -4,8 +4,9 @@ $host = 'localhost';
 $dbname = 'kazakh_language';
 $username = 'root';
 $password = '';
+$port = 3307;
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname,$port);
 
 if ($conn->connect_error) {
     die("Деректер базасына қосылу сәтсіз: " . $conn->connect_error);
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['update'])) {
     $genre = $_POST['genre'];
 
     if (isset($_FILES['book_file']) && $_FILES['book_file']['error'] === UPLOAD_ERR_OK) {
-        $uploadDir = 'upload/';
+        $uploadDir = 'uploads/';
         $filePath = $uploadDir . basename($_FILES['book_file']['name']);
 
         // Проверка на успешную загрузку файла
