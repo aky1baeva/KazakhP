@@ -39,7 +39,7 @@
     <div class="row g-3">
         <!-- Карточки для управления разделами -->
         <div class="col-md-4">
-            <a href="tasks.php" class="card shadow-sm text-center text-decoration-none">
+            <a href="admin_matching.php" class="card shadow-sm text-center text-decoration-none">
                 <div class="card-body">
                     <i class="fas fa-tasks fa-3x text-primary"></i>
                     <h5 class="card-title mt-3">Manage Tasks</h5>
