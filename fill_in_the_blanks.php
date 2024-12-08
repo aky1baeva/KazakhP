@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дұрыс сөзді кірістіру</title>
-    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <div class="container">
@@ -57,7 +57,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <?php if (isset($score)): ?>
             <p>Сіздің ұпайыңыз: <?php echo $score; ?> / <?php echo count($questions); ?></p>
+
+            <?php
+            // Деңгей анықтау
+            $total_questions = count($questions);
+            if ($score >= $total_questions * 0.8) {
+                $level = "Advanced"; // Жоғары деңгей
+            } elseif ($score >= $total_questions * 0.5) {
+                $level = "Intermediate"; // Орташа деңгей
+            } else {
+                $level = "Beginner"; // Бастапқы деңгей
+            }
+            ?>
+
+            <p>Сіздің деңгейіңіз: <strong>
+                <?php
+                // Деңгей көрсетуді қазақша аудару
+                echo $level === "Advanced" ? "Жоғары" : ($level === "Intermediate" ? "Орташа" : "Бастапқы");
+                ?>
+            </strong></p>
+
+            <div class="button-container">
+                <a href="" class="start-btn">Қайтадан өту</a>
+                <a href="index_question.php" class="start-btn">Артқа қайту</a>
+            </div>
         <?php endif; ?>
     </div>
 </body>
 </html>
+
+<?php
+// Дерекқорды жабу
+$connection->close();
+?>

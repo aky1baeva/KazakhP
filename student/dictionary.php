@@ -1,0 +1,103 @@
+<?php
+require 'db.php';
+
+// Получаем параметр поиска из GET запроса
+$search = $_GET['search'] ?? ''; // Если параметр не задан, то используем пустую строку
+
+// Создаем SQL запрос
+$sql = "SELECT * FROM dictionaries";
+if (!empty($search)) {
+    $sql .= " WHERE kazakh_word LIKE :search OR translation LIKE :search"; // Используем LIKE для поиска
+}
+
+$stmt = $pdo->prepare($sql);
+
+// Если есть параметр поиска, выполняем запрос с параметром
+if (!empty($search)) {
+    $stmt->execute(['search' => "%$search%"]); // Ищем по части слова
+} else {
+    $stmt->execute(); // Если поиск пустой, просто выводим все данные
+}
+
+$words = $stmt->fetchAll(PDO::FETCH_ASSOC); // Получаем результаты в виде массива
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary in Kazakh language</title>
+    <!-- Подключаем Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ваши собственные стили -->
+    <link rel="stylesheet" href="styles_d.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="d-flex justify-content-start mb-4">
+            <!-- Артқа қайту батырмасы сол жаққа орналастырылған -->
+            <a href="p.php" class="btn btn-light">
+                <i class="bi bi-arrow-left-circle"></i>← back
+            </a>
+        </div>
+
+        <div class="text-center mb-4">
+            <h1 class="fw-bold">Dictionary in Kazakh language</h1>
+            <p class="text-muted">Explore Kazakh words, their translations, and examples.</p>
+        </div>
+
+        <!-- Форма для поиска -->
+        <form method="GET" action="">
+            <div class="input-group">
+                <input type="text" class="form-control" name="search" placeholder="Word search..." value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+
+        <!-- Выводим таблицу с результатами поиска -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Kazakh word:</th>
+                            <th>Translation:</th>
+                            <th>Audio:</th>
+                            <th>Example:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($words)): ?>
+                            <?php foreach ($words as $word): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($word['kazakh_word']) ?></td>
+                                    <td><?= htmlspecialchars($word['translation']) ?></td>
+                                    <td>
+                                        <?php if (!empty($word['audio_path'])): ?>
+                                            <audio controls>
+                                                <source src="<?= htmlspecialchars($word['audio_path']) ?>" type="audio/mpeg">
+                                            </audio>
+                                        <?php else: ?>
+                                            Аудио жоқ
+                                        <?php endif; ?>
+                                    </td>
+                                    <td><?= nl2br(htmlspecialchars($word['example_sentence'])) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="4" class="text-center">No words found</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем Bootstrap JS и иконки -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+</html>

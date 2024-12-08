@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Боковой Меню с Карточками</title>
+    <title>Side menu cards</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -147,17 +147,17 @@
 
     <!-- Боковое меню -->
     <div id="mySidenav" class="sidenav">
-        <a href="#"><i class="fas fa-tachometer-alt"></i> Дашборд</a>
-        <a href="#"><i class="fas fa-level-up-alt"></i> 1-Деңгей</a>
-        <a href="#"><i class="fas fa-level-up-alt"></i> 2-Деңгей</a>
-        <a href="#"><i class="fas fa-level-up-alt"></i> 3-Деңгей</a>
-        <a onclick="window.location.href='dictionary.php'"><i class="fas fa-book"></i> Сөздіктер</a> 
-        <a onclick="window.location.href='index_question.php'"><i class="fas fa-question-circle"></i> Деңгей анықтау тесті</a>
-        <a onclick="window.location.href='book_list.php'"><i class="fas fa-book-reader"></i> Кітаптар</a>
-        <a onclick="window.location.href='audio_books.php'"><i class="fas fa-headphones-alt"></i> Аудио кітаптар</a>
-        <a href="#"><i class="fas fa-film"></i> Қазақша кинолар</a>
-        <a onclick="window.location.href='setting.php'"><i class="fas fa-cogs"></i> Настройка</a>
-        <a href="#"><i class="fas fa-sign-out-alt"></i> Шығу</a>
+        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashbord</a>
+        <a href="#"><i class="fas fa-level-up-alt"></i> Level-1</a>
+        <a href="#"><i class="fas fa-level-up-alt"></i> Level-2</a>
+        <a href="#"><i class="fas fa-level-up-alt"></i> Level-3</a>
+        <a onclick="window.location.href='dictionary.php'"><i class="fas fa-book"></i> Dictionaries</a> 
+        <a onclick="window.location.href='index_question.php'"><i class="fas fa-question-circle"></i> Level test</a>
+        <a onclick="window.location.href='book_list.php'"><i class="fas fa-book-reader"></i> Books</a>
+        <a onclick="window.location.href='audio_books.php'"><i class="fas fa-headphones-alt"></i> Audio-books</a>
+        <a onclick="window.location.href='students/movies.php'"><i class="fas fa-film"></i> Kazakh movies</a>
+        <a onclick="window.location.href='setting.php'"><i class="fas fa-cogs"></i> Settings</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Exit</a>
     </div>
 
     <!-- Основная часть с карточками -->
@@ -167,7 +167,7 @@
                 <div class="card-body">
                     <i class="icon fas fa-level-up-alt"></i>
                     <h5 class="card-title">1-деңгей</h5>
-                    <button class="btn" onclick="window.location.href='level1.php'">Ашу</button>
+                    <button class="btn" onclick="window.location.href='1level.php'">Ашу</button>
                 </div>
             </div>
             <div class="card green">
@@ -218,7 +218,7 @@
                 <div class="card-body">
                     <i class="icon fas fa-film"></i>
                     <h5 class="card-title">Қазақша кинолар</h5>
-                    <button class="btn">Ашу</button>
+                    <button class="btn" onclick="window.location.href='students/movies.php'">Ашу</button>
                 </div>
             </div>
 
@@ -229,8 +229,6 @@
                     <button class="btn" onclick="window.location.href='setting.php'">Ашу</button>
                 </div>
             </div>
-            
-            <!-- Добавьте остальные карточки по аналогии -->
         </div>
     </div>
 

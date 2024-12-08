@@ -1,0 +1,119 @@
+/* Артқы фон суретін қосу */
+body {
+    background-image: url('pencil-4966994_1280.jpg'); /* Суреттің жолын өзгертіңіз */
+    background-size: cover; /* Суретті экранға толық сыйғызу */
+    background-position: center; /* Суретті экранның ортасына орналастыру */
+    background-attachment: fixed; /* Сурет тұрақты болып қала береді, прокрутка кезінде өзгермейді */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Шрифт түрін өзгерту */
+    display: flex;
+    justify-content: center; /* Контейнерді көлденеңінен орталау */
+    align-items: center; /* Контейнерді тікінен орталау */
+    height: 100vh; /* Веб-беттің толық биіктігі */
+}
+
+/* Контейнердің стилі */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Ақ түстің жартылай мөлдір қабаты */
+    border-radius: 8px;
+}
+
+/* Контейнерге анимация қосу */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Форма мен сұрақтардың стилі */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.question:hover {
+    border-color: #3b9d8f;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.question p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Радио батырмалардың стилі */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #3b9d8f;
+}
+
+/* Батырманың стилі */
+.submit-btn {
+    background-color: #3b9d8f;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2a7f6d;
+}
+
+/* Кішігірім мәліметтер мен хабарламалар */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    color: #3b9d8f;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: #2a7f6d;
+    text-decoration: underline;
+}
+/* Контейнердің стилі */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

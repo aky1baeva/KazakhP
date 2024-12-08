@@ -49,7 +49,7 @@ if ($score >= $total_questions * 0.8) {
         </strong></p>
         <div class="button-container">
             <a href="test.php" class="start-btn">Қайтадан өту</a>
-            <a href="p.php" class="start-btn">Артқа қайту</a>
+            <a href="index_question.php" class="start-btn">Артқа қайту</a>
         </div>
     </div>
 </body>

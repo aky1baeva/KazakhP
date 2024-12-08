@@ -33,6 +33,7 @@ $result = $conn->query($query);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -61,10 +62,30 @@ $result = $conn->query($query);
         a:hover {
             text-decoration: underline;
         }
+
+        /* Артқа қайту батырмасы */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+        }
+
+        .back-btn:hover {
+            background-color: #e2e2e2;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Артқа қайту батырмасы -->
+        <a href="p.php" class="back-btn">← Артқа</a>
+
         <h1>Кітаптар тізімі</h1>
         <table>
             <thead>
@@ -85,7 +106,6 @@ $result = $conn->query($query);
                             <td>
                                 <a href="<?= htmlspecialchars($book['file_path']); ?>" target="_blank">Оқу</a> |
                                 <a href="<?= htmlspecialchars($book['file_path']); ?>" download>Жүктеу</a>
-                                <a href="save_book.php?book_id=<?= $book['id']; ?>">Сақтау</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>

@@ -35,6 +35,13 @@ $words = $stmt->fetchAll(PDO::FETCH_ASSOC); // Получаем результа
 </head>
 <body>
     <div class="container py-5">
+        <div class="d-flex justify-content-start mb-4">
+            <!-- Артқа қайту батырмасы сол жаққа орналастырылған -->
+            <a href="p.php" class="btn btn-light">
+                <i class="bi bi-arrow-left-circle"></i>← Артқа
+            </a>
+        </div>
+
         <div class="text-center mb-4">
             <h1 class="fw-bold">Қазақ тіліндегі сөздік</h1>
             <p class="text-muted">Қазақша сөздерді, олардың аудармаларын және мысалдарын зерттеңіз</p>
@@ -89,9 +96,8 @@ $words = $stmt->fetchAll(PDO::FETCH_ASSOC); // Получаем результа
         </div>
     </div>
 
-    <!-- Подключаем Bootstrap JS -->
+    <!-- Подключаем Bootstrap JS и иконки -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 </body>
 </html>
-
-
